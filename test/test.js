@@ -15,4 +15,20 @@ describe('sanity check', function () {
     });
 });
 
+describe('coffee model', () => {
+    it('should give the coffee by id', async () => {
+        const coffeeData = await Coffee.getById(1);
+        console.log(coffeeData);
+        expect(coffeeData).to.be.an.instanceOf(Coffee);
+    });
+    it('should be able to retrive a coffee by the size', async () => {
+        const coffeeSize = await Coffee.getById(3);
+        expect(coffeeSize).to.be.an.instanceOf(Coffee);
+    });
+    it('should be able to retrieve all orders', async () => {
+        const allCoffeeOrders = await Coffee.getAll();
+        expect(allCoffeeOrders).to.be.an.instanceOf(Array);
+    });
+});
+
 

@@ -1,7 +1,7 @@
 {
   "name": "coffee-orders-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "practice",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -24,5 +24,16 @@
   },
   "dependencies": {
     "pg-promise": "^8.6.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-DiRusso/coffee-orders-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/A-DiRusso/coffee-orders-app/issues"
+  },
+  "homepage": "https://github.com/A-DiRusso/coffee-orders-app#readme"
 }

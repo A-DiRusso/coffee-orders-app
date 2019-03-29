@@ -2,10 +2,10 @@ const db = require('./conn');
 
 
 class Coffee {
-    constructor(id, name, order, size) {
+    constructor(id, name, orders, size) {
         this.id = id;
         this.name = name;
-        this.order = order;
+        this.orders = orders;
         this.size = size;
     }
 
@@ -14,7 +14,7 @@ class Coffee {
             .then((coffeeData) => {
                 const coffeeInstance = new Coffee(coffeeData.id,
                                                   coffeeData.name,
-                                                  coffeeData.order,
+                                                  coffeeData.orders,
                                                   coffeeData.size
                                                   );
                 return coffeeInstance;
@@ -25,11 +25,27 @@ class Coffee {
 
     }
 
+    static getAll() {
+        return db.any(`select * from coffee`)
+            .then((arrayOfCoffeeOrders) => {
+                return arrayOfCoffeeOrders.map((coffeeData) => {
+                    const aCoffeeOrder = new Coffee(
+                        coffeeData.id,
+                        coffeeData.name,
+                        coffeeData.orders,
+                        coffeeData.size
+                        );
+                        console.log(aCoffeeOrder);
+                        return aCoffeeOrder;
+                });
+            })
+    }
+
     save() {
         return db.result(`
         update coffee set
         name=${this.name},
-        order=${this.order},
+        order=${this.orders},
         size=${this.size},
     where id=${this.id}
         `)

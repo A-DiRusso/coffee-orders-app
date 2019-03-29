@@ -1,5 +1,5 @@
-insert into coffee-orders
-        (name, order, size)
+insert into coffee
+        (name, orders, size)
 values
     ('Amy', 'Coffee Black', 'grande'),
     ('Andy', 'Americano Extra Cream Extra Sugar', 'venti'),
