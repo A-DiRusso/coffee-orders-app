@@ -15,7 +15,6 @@ class Coffee {
                 const coffeeInstance = new Coffee(coffeeData.id,
                                                   coffeeData.name,
                                                   coffeeData.order,
-                                                  coffeeData.order,
                                                   coffeeData.size
                                                   );
                 return coffeeInstance;
@@ -31,7 +30,7 @@ class Coffee {
         update coffee set
         name=${this.name},
         order=${this.order},
-        status=${this.size},
+        size=${this.size},
     where id=${this.id}
         `)
     }
