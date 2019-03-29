@@ -13,6 +13,6 @@ const options = {
 };
 
 
-//make a connectoin to the database specified by the options object
-const db = pgp(optoins);
+//make a connection to the database specified by the options object
+const db = pgp(options);
 module.exports = db;
