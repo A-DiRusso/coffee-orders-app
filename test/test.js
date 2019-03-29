@@ -21,11 +21,12 @@ describe('coffee model', () => {
         console.log(coffeeData);
         expect(coffeeData).to.be.an.instanceOf(Coffee);
     });
-    it('should be able to retrive a coffee by the size', async () => {
+    it('should be able to retrive a coffee size by the id', async () => {
         const coffeeSize = await Coffee.getById(3);
-        expect(coffeeSize).to.be.an.instanceOf(Coffee);
+        console.log(coffeeSize.size);
+        expect(coffeeSize.size).to.equal('tall');
     });
-    it('should be able to retrieve all orders', async () => {
+    it('should be able to retrieve all coffee orders', async () => {
         const allCoffeeOrders = await Coffee.getAll();
         expect(allCoffeeOrders).to.be.an.instanceOf(Array);
     });
