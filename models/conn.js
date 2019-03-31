@@ -1,6 +1,6 @@
 //first require 'pg-promise'
 //call it immidetly which gives you a configured database connector
-//the define the connection options
+//then define the connection options
 const pgp = require('pg-promise')({
     query: e => {
         console.log('QUERY: ', e.query);
